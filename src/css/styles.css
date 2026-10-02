@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+/* ===== GLOBAL STYLES ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+}
+/* controls image sizes */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== HEADER / NAV ===== */
+/* Logo */
+.site-nav .logo {
+  display: block;
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+}
+
+/* ====== MOBILE NAV BASE ====== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+}
+
+.site-header-inner {
+  align-items: center;
+  min-height: 64px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-toggle-label {
+  z-index: 1001;
+  position: relative;
+  margin-left: auto;
+  width: 32px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav-toggle-label span:not(.sr-only) {
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 1px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.2s ease;
+}
+
+.site-header.nav-open .nav-toggle-label span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.site-header.nav-open .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.nav-open .nav-toggle-label span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== OVERLAY ===== */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+  z-index: 900;
+}
+
+/* Active overlay */
+.site-header.nav-open .nav-overlay {
+  background: rgba(255, 255, 255, 0.85);
+  pointer-events: auto;
+}
+
+/* ===== MOBILE MENU ====== */
+
+.nav-menu {
+  position: fixed;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: 950;
+}
+
+.site-header.nav-open .nav-menu {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-menu a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition:
+    transform 0.2s ease,
+    font-weight 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+  transform: scale(1.05);
+  font-weight: 600;
+}
+
+.nav-menu a:active {
+  transform: scale(1.02);
+}
+
+/* Purple underline on hover/click */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #6b2d8b;
+  transition: width 0.3s ease;
+}
+
+/* Keep underline on active page */
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a:focus::after {
+  width: 100%;
+}
+
+/* Hide logo when menu open */
+.site-header.nav-open .logo {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* ===== DESKTOP NAVIGATION ===== */
+@media (min-width: 768px) {
+  .nav-toggle-label,
+  .nav-overlay {
+    display: none;
+  }
+
+  /* Keep logo visible at all times */
+  .logo {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Horizontal menu */
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2.5rem;
+    position: static;
+    opacity: 1;
+    transform: none;
+    margin-left: auto;
+  }
+
+  .nav-menu a {
+    position: relative;
+  }
+}
+/* ===== FOOTER NAVIGATION ===== */
+
+/* Secondary navigation */
+.footer-nav ul {
+  display: inline-flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav a,
+.download-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    font-weight 0.2s ease;
+}
+
+/* underline */
+.footer-nav a::after,
+.download-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #fbd938;
+  transition: width 0.3s ease;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus,
+.download-link:hover,
+.download-link:focus {
+  transform: scale(1.05);
+  font-weight: 600;
+}
+
+.footer-nav a:hover::after,
+.footer-nav a:focus::after,
+.download-link:hover::after,
+.download-link:focus::after {
+  width: 100%;
+}
+
+.footer-nav a:active,
+.download-link:active {
+  transform: scale(1.02);
+}
