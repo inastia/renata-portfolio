@@ -12,8 +12,201 @@
     <script type="module" src="/src/js/main.js"></script>
   </head>
   <body>
-    <section>
-      <div></div>
-    </section>
+    <!-- Header section -->
+    <header class="site-header relative z-1000 bg-bg-main">
+      <div
+        class="mx-auto min-h-16 w-[calc(100%-48px)] max-w-300 pt-6 md:w-[calc(100%-64px)] lg:w-[calc(100%-96px)]"
+      >
+        <nav class="site-nav flex h-16 items-center justify-between">
+          <!-- Logo -->
+          <div>
+            <a href="/" class="logo">
+              <img
+                src="/img/renata-logo.png"
+                alt="Renata Estes — Web Designer"
+                width="60"
+                height="60"
+              />
+            </a>
+          </div>
+          <!-- MAIN MENU -->
+          <div>
+            <!-- Hamburger / X -->
+            <button
+              type="button"
+              class="nav-toggle-label"
+              aria-label="Open navigation"
+              aria-expanded="false"
+              aria-controls="site-nav-menu"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </button>
+
+            <div class="nav-overlay" aria-hidden="true"></div>
+
+            <ul class="nav-menu" id="site-nav-menu">
+              <li>
+                <a href="/" class="site-nav-label">work</a>
+              </li>
+              <li>
+                <a href="/about.html" class="site-nav-label">about</a>
+              </li>
+              <li>
+                <a href="mailto:info@renataestes.com" class="site-nav-label"
+                  >contact <span class="text-sm" aria-hidden="true">↗</span></a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- MAIN MENU ENDS -->
+        </nav>
+      </div>
+    </header>
+    <!-- Header section ends -->
+    <main class="bg-bg-main">
+      <section class="py-10 md:py-16 lg:py-24">
+        <div
+          class="mx-auto grid w-[calc(100%-48px)] max-w-300 gap-8 md:w-[calc(100%-64px)] md:grid-cols-2 md:gap-12 lg:w-[calc(100%-96px)] lg:gap-24"
+        >
+          <div class="md:pt-8">
+            <h1
+              class="font-montserrat text-[2.75rem] font-semibold leading-[1.1] text-text-primary md:text-[3.75rem]"
+            >
+              Hi, I’m Renata,<br />web designer &amp; copywriter.
+            </h1>
+            <p
+              class="mt-8 font-bitter text-xl font-normal leading-normal text-text-secondary md:text-[1.375rem]"
+            >
+              It started with a full-stack coding program and a job at a
+              nonprofit, watching business owners get overlooked online simply
+              because no one had built them a proper home on the internet.
+              That's the gap I've been closing ever since — copy, design, and
+              strategy, all from one person.
+            </p>
+            <p
+              class="mt-6 font-bitter text-xl font-normal leading-normal text-text-secondary md:text-[1.375rem]"
+            >
+              Now I'm based in Da Nang, Vietnam — 8+ years in, available in U.S.
+              timezones.
+            </p>
+          </div>
+          <img
+            src="/img/renata-2.jpg"
+            alt="Renata in a yellow dress beneath a blue archway overlooking the sea"
+            width="2160"
+            height="3840"
+            class="h-auto w-full self-start"
+          />
+        </div>
+      </section>
+
+      <section aria-label="Software and skills" class="py-10 md:py-16 lg:py-24">
+        <div
+          class="mx-auto w-[calc(100%-48px)] max-w-300 md:w-[calc(100%-64px)] lg:w-[calc(100%-96px)]"
+        >
+          <dl class="grid gap-12 lg:gap-24">
+            <div class="grid gap-6 md:grid-cols-[10rem_1fr] md:gap-12">
+              <dt
+                class="font-bitter text-lg font-normal leading-[1.6] text-text-primary underline"
+              >
+                Software
+              </dt>
+              <dd class="max-w-xl">
+                <p
+                  class="font-bitter text-lg font-normal leading-[1.6] text-text-secondary"
+                >
+                  Squarespace, Wix, Canva, Showit, Shopify,<br
+                    class="hidden md:block"
+                  />
+                  Base 44, Lovable, Framer
+                </p>
+                <p
+                  class="mt-6 font-montserrat text-lg font-normal leading-[1.6] text-text-secondary"
+                >
+                  Figma
+                </p>
+              </dd>
+            </div>
+            <div class="grid gap-6 md:grid-cols-[10rem_1fr] md:gap-12">
+              <dt
+                class="font-bitter text-lg font-normal leading-[1.6] text-text-primary underline"
+              >
+                Skills
+              </dt>
+              <dd
+                class="max-w-xl font-montserrat text-lg font-normal leading-[1.6] text-text-secondary"
+              >
+                Web Design, Copywriting, SEO, Content Strategy,<br
+                  class="hidden md:block"
+                />
+                HTML, CSS, Tailwind
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section aria-label="Contact" class="py-10 md:py-16 lg:py-24">
+        <div
+          class="mx-auto grid w-[calc(100%-48px)] max-w-300 gap-8 border-b-2 border-text-primary pb-8 md:w-[calc(100%-64px)] md:grid-cols-2 md:items-center lg:w-[calc(100%-96px)]"
+        >
+          <h2
+            class="group/contact font-bitter text-[1.75rem] font-normal leading-tight text-text-primary md:text-[2rem]"
+          >
+            I am looking forward to<br class="hidden md:block" />
+            working with you
+            <span
+              class="inline-block motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-in-out motion-safe:group-hover/contact:translate-x-2"
+              aria-hidden="true"
+              >→</span
+            >
+          </h2>
+          <a
+            href="mailto:info@renataestes.com"
+            class="justify-self-start break-all font-montserrat text-2xl font-normal leading-[1.3] text-text-primary hover:text-accent motion-safe:transition-[color,transform] motion-safe:duration-300 motion-safe:ease-in-out motion-safe:hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-accent focus-visible:outline-offset-4 md:justify-self-end md:text-[1.625rem]"
+            >info@renataestes.com</a
+          >
+        </div>
+      </section>
+    </main>
+    <!-- Footer section -->
+    <footer class="bg-bg-main py-8 md:py-12 lg:py-16">
+      <div
+        class="mx-auto flex w-[calc(100%-48px)] max-w-300 flex-col gap-8 md:w-[calc(100%-64px)] md:flex-row md:items-center md:justify-between lg:w-[calc(100%-96px)]"
+      >
+        <p class="font-bitter text-lg font-light leading-[1.4] text-accent">
+          Renata Estes — 2026
+        </p>
+        <nav aria-label="Footer">
+          <ul class="footer-links flex flex-wrap items-center gap-8 lg:gap-12">
+            <li>
+              <a
+                href="/documents/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="site-nav-label"
+                >Resume</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/renataestes"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="site-nav-label"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="mailto:info@renataestes.com" class="site-nav-label"
+                >Email</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

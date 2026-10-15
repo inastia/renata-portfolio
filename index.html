@@ -12,12 +12,11 @@
   </head>
   <body>
     <!-- Header section -->
-    <header class="site-header">
+    <header class="site-header relative z-1000 bg-bg-main">
       <div
-        id="site-header"
-        class="site-header-inner max-w-7xl mx-auto px-4 md:px-6 pt-6"
+        class="mx-auto min-h-16 w-[calc(100%-48px)] max-w-300 pt-6 md:w-[calc(100%-64px)] lg:w-[calc(100%-96px)]"
       >
-        <nav class="site-nav">
+        <nav class="site-nav flex h-16 items-center justify-between">
           <!-- Logo -->
           <div>
             <a href="/" class="logo">
@@ -32,24 +31,31 @@
           <!-- MAIN MENU -->
           <div>
             <!-- Hamburger / X -->
-            <label class="nav-toggle-label">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span class="sr-only">Toggle navigation</span>
-            </label>
+            <button
+              type="button"
+              class="nav-toggle-label"
+              aria-label="Open navigation"
+              aria-expanded="false"
+              aria-controls="site-nav-menu"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </button>
 
-            <div class="nav-overlay"></div>
+            <div class="nav-overlay" aria-hidden="true"></div>
 
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="site-nav-menu">
               <li>
-                <a href="/" class="text-base font-semibold">work</a>
+                <a href="/" class="site-nav-label">work</a>
               </li>
               <li>
-                <a href="/about" class="text-base font-semibold">about</a>
+                <a href="/about.html" class="site-nav-label">about</a>
               </li>
               <li>
-                <a href="/about" class="text-base font-semibold">contact</a>
+                <a href="mailto:info@renataestes.com" class="site-nav-label"
+                  >contact <span class="text-sm" aria-hidden="true">↗</span></a
+                >
               </li>
             </ul>
           </div>
@@ -57,65 +63,95 @@
         </nav>
       </div>
     </header>
+    <!-- Header section ends -->
     <!-- Main content section -->
     <main>
       <div>
         <!-- Hero section -->
-        <section>
-          <div class="hero">
-            <h1>Hello, I'm Renata</h1>
-            <h4>
-              I help location-independent entrepreneurs and women-led businesses
-              show up online with clarity, strategy, and design that converts.
-            </h4>
+        <section id="home-hero" class="bg-bg-main py-10 md:py-16 lg:py-24">
+          <div
+            class="mx-auto w-[calc(100%-48px)] max-w-300 md:w-[calc(100%-64px)] lg:w-[calc(100%-96px)]"
+          >
+            <div class="grid gap-8 md:grid-cols-[2fr_3fr] md:gap-12 lg:gap-16">
+              <h1
+                class="font-montserrat text-[2.75rem] font-semibold leading-[1.1] text-accent md:text-[3.75rem]"
+              >
+                Hello, I’m<br />Renata.
+              </h1>
+              <p
+                class="font-montserrat text-[1.375rem] font-normal leading-normal text-text-secondary md:pt-8 md:text-[1.625rem] lg:pt-15.5"
+              >
+                I help location-independent entrepreneurs and women-led
+                businesses show up online with clarity, strategy, and design
+                that converts.
+              </p>
+            </div>
+            <svg
+              class="mt-12 h-12 w-12 text-accent motion-safe:animate-[hero-arrow_2s_ease-in-out_infinite] md:mt-16 lg:mt-24"
+              viewBox="0 0 40 40"
+              fill="none"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M20 4v30M6 20l14 14 14-14"
+                stroke="currentColor"
+                stroke-width="3"
+              />
+            </svg>
           </div>
         </section>
         <!-- Cards section -->
-        <section>
-          <div class="project-card" id="project-card"></div>
+        <section
+          id="home-work"
+          aria-label="Selected work"
+          class="bg-bg-main py-10 md:py-16 lg:py-24"
+        >
+          <div
+            id="projects-grid"
+            class="mx-auto grid w-[calc(100%-48px)] max-w-300 gap-16 md:w-[calc(100%-64px)] md:gap-18 lg:w-[calc(100%-96px)] lg:gap-24"
+          ></div>
         </section>
       </div>
     </main>
+    <!-- Footer section -->
+    <footer class="bg-bg-main py-8 md:py-12 lg:py-16">
+      <div
+        class="mx-auto flex w-[calc(100%-48px)] max-w-300 flex-col gap-8 md:w-[calc(100%-64px)] md:flex-row md:items-center md:justify-between lg:w-[calc(100%-96px)]"
+      >
+        <p class="font-bitter text-lg font-light leading-[1.4] text-accent">
+          Renata Estes — 2026
+        </p>
+        <nav aria-label="Footer">
+          <ul class="footer-links flex flex-wrap items-center gap-8 lg:gap-12">
+            <li>
+              <a
+                href="/documents/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="site-nav-label"
+                >Resume</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/renataestes"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="site-nav-label"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="mailto:info@renataestes.com" class="site-nav-label"
+                >Email</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
     <script type="module" src="/src/js/projects.js"></script>
     <script type="module" src="/src/js/main.js"></script>
   </body>
-  <!-- Footer section -->
-  <footer>
-    <div>
-      <div class="">
-        <h5>2026 © Renata Estes. All Rights Reserved.</h5>
-      </div>
-      <nav class="footer-nav">
-        <ul>
-          <li>
-            <a
-              href="/documents/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-base font-semibold"
-              >Resume</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/renataestes"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-base font-semibold"
-              >LinkedIn</a
-            >
-          </li>
-          <li>
-            <a
-              href="mailto:info@renataestes.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-base font-semibold"
-              >Email</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </footer>
 </html>
