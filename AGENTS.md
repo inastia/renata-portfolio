@@ -64,6 +64,7 @@
 - Do not refactor working code unless I specifically request it.
 - Do not add placeholder code, TODO comments, or unfinished functionality unless requested.
 - Do not add comments that simply describe what the code already makes obvious.
+- Use short HTML comments to label major page sections (for example, `<!-- Previous and Next Section -->`) so I can scan the code and check for issues. Preserve existing section comments. These section labels are an intentional exception to the rule above.
 - Do not create reusable components or abstractions until there is a demonstrated need.
 
 ## 8. Approval requirements
